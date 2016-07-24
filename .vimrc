@@ -38,7 +38,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'moll/vim-node'
 Plugin 'whatyouhide/vim-gotham'
 
-
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -68,6 +67,8 @@ set laststatus=2
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#branch#enabled = 1
+
+
 
 
 

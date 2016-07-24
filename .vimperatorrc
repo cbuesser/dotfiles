@@ -1,0 +1,7 @@
+" " A bit of vimperator config for firefox
+
+noremap x d
+noremap d <C-d>
+noremap u <C-u>
+noremap J <C-p>
+noremap K <C-n>
