@@ -1,0 +1,68 @@
+" ==Vimperator_Color_Scheme==
+" name: Darkness
+" url: http://code.google.com/p/vimperator-labs/issues/detail?id=280&q=label%3Aproject-vimperator%20label%3Atype-colorscheme&colspec=ID%20Summary%20Project%20Type%20Status%20Priority%20Stars%20Owner
+" ==Darkness_Colorscheme_Settings==
+
+"StatusLine settings
+hi StatusLine           color: #98d1ce; background: #0a0f14; "font-size: 8pt;
+" hi StatusLineBroken     color: #0a0f14; background: #afafff; "font-size: 8pt;
+" hi StatusLineSecure     color: #0a0f14; background: #afffaf; "font-size: 8pt;
+
+"CmdLine settings excluding Gradient
+hi Normal               color: #d3ebe9; background: #081f2d;
+hi CmdLine              background: #081f2d; color: #d3ebe9; font-size: 11pt;
+hi CompDesc             color: #c6c6c6; width: 50%; font-size: 11pt;
+hi CompIcon             width: 16px; min-width: 16px; display: inline-block; margin-right: .5ex;
+hi CompItem[selected]   background: #666666; color: #d3ebe9; 
+" hi CompLess             text-align: center; height: 0; line-height: .5ex; padding-top: 1ex;
+" hi CompMore             text-align: center; height: .5ex; line-height: .5ex; margin-bottom: -.5ex;
+hi CompMsg              font-style: italic; margin-left: 16px;
+hi CompResult           width: 45%; overflow: hidden;font-size: 10pt; font-family: monospace; font-weight: normal;
+hi CompTitle            color: #d3ebe9; background: #081f2d; font-weight: bold;
+hi CompTitle>*          padding: 0 .5ex;
+hi Filter               font-weight: bold;color: #d3ebe9;
+
+"When using tab complete in CmdLine, line separating Title from function and description
+" hi Gradient             height: 1px; margin-bottom: -1px; margin-top: -1px;
+" hi GradientLeft         background-color: #00bbff;
+" hi GradientRight        background-color: #081f2d;
+
+"Used with ]f and [f
+hi FrameIndicator       background-color: #081f2d; opacity: 0.5; z-index: 999; position: fixed; top: 0; bottom: 0; left: 0; right: 0;
+
+hi Bell                 border: 0 none; background-color: #081f2d;
+hi ErrorMsg             color: #98d1ce; background: red; font-weight: bold;
+
+
+"Hint section
+"hi Hint                 font-family: Sans; font-size: 10px; font-weight: bold; color: #f6e9e9; background-color: red; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding 0px 1px 0px 1px;
+hi Hint               	font-family: Sans; font-size: 11px; font-weight: bold; color: #c33027; background-color: #d3ebe9; border: solid 1px #c33027;
+hi Hint::after          content: attr(number);
+hi HintActive           background: #c33027; color: #d3ebe9;
+hi HintElem             background-color: #599caa; color: #d3ebe9;
+hi HintImage            opacity: .3;
+
+"Other important stuff
+hi InfoMsg              color: #d3ebe9; background: #081f2d;
+hi Message              white-space: normal; min-width: 100%; padding-left: 2em; text-indent: -2em; display: block;
+hi WarningMsg           color: #c33027; background: #081f2d;
+hi ModeMsg              color: #d3ebe9; background: #081f2d; "CmdLine when Not in Use
+hi MoreMsg              color: #d3ebe9; background: #081f2d;
+hi NonText              color: lightblue; min-height: 16px; padding-left: 2px;
+hi Question             color: #98d1ce; background: #081f2d; font-weight: bold;
+" hi Search               font-size: inherit; padding: 0; color: #081f2d; background-color: yellow; padding: 0;
+hi Function             color: lightgreen; background: #081f2d;
+hi Number               color: tan; background: #081f2d
+hi String               color: #081f2d; background: #d3ebe9;
+hi Tag                  color: #081f2d; background: #d3ebe9;
+hi Title                color: #081f2d; background: #d3ebe9; font-weight: bold;
+hi URL                  text-decoration: none; color: lightblue; background: inherit;
+hi URL:hover            text-decoration: underline; cursor: pointer;
+hi LineNr               color: #d3ebe9; background: #081f2d;
+
+"style -name statusbar chrome://* <<EOM
+"#status-bar statusbarpanel { padding: 0 1px !important; }
+"statusbarpanel > * { margin: 0 !important; padding: 0 2px 0 0 !important; }
+"EOM
+
+"For other descriptions of each item, please see ``Styling'' section included with Vimperator
