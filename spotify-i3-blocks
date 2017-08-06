@@ -1,0 +1,46 @@
+#!/bin/bash
+
+TEMP=$(qdbus org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get org.mpris.MediaPlayer2.Player Metadata)
+
+STATUS=$(qdbus org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get org.mpris.MediaPlayer2.Player PlaybackStatus)
+
+if [[ $TEMP ]]; then
+    SONG=$(echo "$TEMP" | grep title | sed -r 's/xesam:title: (.*)$/\1/')
+    ARTIST=$(echo "$TEMP" | grep artist | sed -r 's/xesam:artist: (.*)$/\1/')
+    FULL_SONG=$(echo $ARTIST" - "$SONG | sed -e 's/ xesam//g' -e 's/^[[:space:]]*//')
+else
+    FULL_SONG='Spotify'
+fi
+
+#echo "$TEMP" | grep title | sed -r 's/xesam:title: (.*)$/\1/'
+#echo $SONG
+#echo $ARTIST
+#echo $FULL_SONG
+
+if [[ $STATUS == "Playing" ]]; then
+    SONG=$FULL_SONG
+else
+    SONG="Spotify"
+fi
+#SPOTIFY=$(wmctrl -l | awk -F" " '{print $1}' | xargs -n 1 xprop -id | grep -A 3 spotify)
+
+
+#if [[ $SPOTIFY ]]; then 
+#    SONG=$(echo $SPOTIFY | grep _NET_WM | awk -F'"' '{print $6}')
+#else
+#    SONG="Spotify"
+#fi
+
+echo $SONG
+
+case $BLOCK_BUTTON in 
+    1) dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous;;
+    2) dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause;;
+    3) dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next;; #Pause 
+    4) ;; #Next Song
+    5) ;; #Prev Song
+esac
+#echo $BLOCK_BUTTON
+
+
+
